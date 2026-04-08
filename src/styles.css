@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "monospace";
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+.container > * {
+  min-height: 100vh;
+  height: 100%;
+}
+
+.form-section {
+  background-color:darkorchid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#newBookForm{
+  position: fixed;
+  top: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#newBookForm h2 {
+  font-weight: lighter;
+  color: white;
+}
+
+#newBookForm .input-container {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+  color: white;
+  font-weight: bold;
+}
+
+.viewing-section {
+  padding: 10px 15px; 
+}
+
+.viewing-section > h3 {
+  font-size: 1.4em;
+  margin-bottom: 12px;
+}
+
+.lists {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 10px;
+}
+
+.list {
+  border: 1px solid red;
+}
