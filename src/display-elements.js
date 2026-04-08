@@ -41,9 +41,12 @@ function displayTasks(tasksArray) {
     // for each key in task, create a p element using the key's name and value
     for (const key in task) {
       const p = createElem("p", key, task[key]);
+      // if key is "description" or "priority", don't display it
+      if (key === "description" || key === "priority") {
+        p.style.display = "none";
+      }
       taskDiv.append(p)
     }
-    console.log(taskDiv);
     div.append(taskDiv);
   }
   return div;
