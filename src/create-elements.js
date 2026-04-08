@@ -1,5 +1,5 @@
 // an array to keep all the lists
-let library = [];
+let library = [{title: "list1", tasks: [{taskTitle: 'task1', description: 'first task kinda nervous', dueDate: '14:00', priority: 'urgent'}]}];
 
 // create a function that creates a new list object and also pushes it to library
 function List(title) {
