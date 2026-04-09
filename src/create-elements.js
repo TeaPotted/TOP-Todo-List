@@ -24,5 +24,19 @@ function createElem(element, cls, text) {
   return elem
 }
 
+function createLabel(inputId, text) {
+  const label = document.createElement("label");
+  label.htmlFor = inputId;
+  label.textContent = text;
+  return label
+}
 
-export {library, List, createElem}
+function createInput(type, id, name) {
+  const input = document.createElement("input");
+  input.type = type;
+  input.setAttribute("id", id);
+  input.setAttribute("name", name);
+  return input;
+}
+
+export {library, List, createElem, createLabel, createInput}
