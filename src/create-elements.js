@@ -19,19 +19,21 @@ function List(title) {
 // create a function for creating elements and adding their class and textContent
 function createElem(element, cls, text) {
   const elem = document.createElement(element);
-  if (cls !== "") elem.classList.add(cls)
+  if (cls !== "") elem.classList.add(cls) // if cls is'nt empty add a class
   elem.textContent = text;
   return elem
 }
 
 
+// create a function that creates label elements and also sets it's for attribute and textContent
 function createLabel(inputId, text) {
   const label = document.createElement("label");
-  label.htmlFor = inputId;
+  label.htmlFor = inputId; // set it's for attribute
   label.textContent = text;
   return label
 }
 
+// create a function that creates inputs and also sets it's type, id and name
 function createInput(type, id, name) {
   const input = document.createElement("input");
   input.type = type;
