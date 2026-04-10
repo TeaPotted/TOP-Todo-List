@@ -24,6 +24,7 @@ function createElem(element, cls, text) {
   return elem
 }
 
+
 function createLabel(inputId, text) {
   const label = document.createElement("label");
   label.htmlFor = inputId;
@@ -39,4 +40,12 @@ function createInput(type, id, name) {
   return input;
 }
 
-export {library, List, createElem, createLabel, createInput}
+// create a function that returns an option element that has it's textContent and value set
+function createOption(val) {
+  const option = document.createElement("option");
+  option.value = val;
+  option.textContent = val;
+  return option;
+};
+
+export {library, List, createElem, createLabel, createInput, createOption}
