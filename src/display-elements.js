@@ -11,20 +11,34 @@ function displayLibrary() {
   }
 }
 
+// create a function that creates and displays DOM elements with the given list
 function displayList(list) {
   const listDiv = createElem("div", "list", ""); // create a div for the list
   
   // for each key in list
   for (const key in list) {
+    
+    switch (key) {
+      // if key is "title", create a h3 element and append it to listDiv
+      case "title":
+        const title = createElem("h3", key, list[key])
+        listDiv.appendChild(title);
+        break;
+      
+      // if key is "tasks", call displayTasks
+      case "tasks":
+        const tasks = displayTasks(list[key]);
+        listDiv.append(tasks)
+        break;
 
-    // if the key is "title", create a h3 element and append it to listDiv
-    if (key === "title") {
-      const title = createElem("h3", key, list[key])
-      listDiv.appendChild(title);
-    } else {
-      const tasks = displayTasks(list[key])
-      listDiv.appendChild(tasks)
-    };   
+      // if key is "id", set listDiv data-id attribute to the key's value
+      case "id":
+        listDiv.dataset.id = list[key];
+        break;
+
+      default:
+        break;
+    };
   };
   document.querySelector(".lists").appendChild(listDiv); // append listDiv to .lists div
 };
