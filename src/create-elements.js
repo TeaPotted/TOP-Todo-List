@@ -1,9 +1,9 @@
 // an array to keep all the lists
-let library = [{title: "list1", tasks: [{taskTitle: 'task1', description: 'first task kinda nervous', dueDate: '14:00', priority: 'urgent'}]}];
+let library = [{title: "list1", tasks: [{taskTitle: 'task1', description: 'first task kinda nervous', dueDate: '14:00', priority: 'urgent'}], id: crypto.randomUUID()}];
 
 // create a function that creates a new list object and also pushes it to library
 function List(title) {
-  const list = {title, tasks: []}; // set the list's title and make it have an empty arra to keep the tasks in
+  const list = {title, tasks: [], id: crypto.randomUUID()}; // set the list's title and make it have an empty arra to keep the tasks in
   library.push(list)
 
   // create a method for adding a task object to the tasks array
