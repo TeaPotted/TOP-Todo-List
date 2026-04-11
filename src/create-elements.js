@@ -50,4 +50,14 @@ function createOption(val) {
   return option;
 };
 
-export {library, List, createElem, createLabel, createInput, createOption}
+// create a function that returns a div that holds a label and input
+function createInputContainer(labelText, inputID, inputType) {
+  const inputContainer = createElem("div", "input-container", "");
+  const label = createLabel(inputID, labelText);
+  const input = createInput(inputType, inputID, inputID);
+  inputContainer.append(label, input);
+
+  return inputContainer
+};
+
+export {library, List, createElem, createLabel, createOption, createInputContainer}
