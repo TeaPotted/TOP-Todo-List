@@ -60,4 +60,13 @@ function createInputContainer(labelText, inputID, inputType) {
   return inputContainer
 };
 
-export {library, List, createElem, createLabel, createOption, createInputContainer}
+// create a function that returns a button with a set class or id and textContent
+function createButton(cls, textContent) {
+  const btn = document.createElement("button");
+  if (cls !== "") btn.classList.add(cls);
+  btn.textContent = textContent;
+  btn.type = "button";
+  return btn;
+}
+
+export {library, List, createElem, createLabel, createOption, createInputContainer, createButton}
