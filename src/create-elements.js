@@ -39,6 +39,7 @@ function createInput(type, id, name) {
   input.type = type;
   input.setAttribute("id", id);
   input.setAttribute("name", name);
+  input.required = true; // sets the input to be required
   return input;
 }
 
