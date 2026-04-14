@@ -61,3 +61,21 @@
 .list {
   border: 1px solid red;
 }
+
+.tasksContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.Normal {
+  border: 1px solid gray;
+}
+
+.Important {
+  border: 1px solid cornflowerblue;
+}
+
+.Urgent {
+  border: 1px solid darkmagenta;
+}
