@@ -1,4 +1,5 @@
 import {library, createElem} from "./create-elements.js";
+import {addTaskForm} from "./display-taskForm.js";
 
 // create a function for displaying all lists in library
 function displayLibrary() {
@@ -40,6 +41,11 @@ function displayList(list) {
         break;
     };
   };
+
+  // create a button for adding a task and append it to listDiv
+  const addTaskBtn = createElem("button", "addTask", "+ Add Task")
+  addTaskBtn.addEventListener("click", () => {addTaskForm(list)})
+  listDiv.append(addTaskBtn);
   document.querySelector(".lists").appendChild(listDiv); // append listDiv to .lists div
 };
 
