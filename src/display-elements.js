@@ -65,6 +65,10 @@ function displayTasks(tasksArray) {
       if (key === "description" || key === "priority") {
         p.style.display = "none";
       }
+
+      // if key is "priority", set taskDiv's class to the priority value
+      if (key === "priority") taskDiv.classList.add(task[key])
+      
       taskDiv.append(p)
     }
     div.append(taskDiv);
