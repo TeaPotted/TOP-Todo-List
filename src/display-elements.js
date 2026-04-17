@@ -1,5 +1,6 @@
 import {library, createElem} from "./create-elements.js";
 import {addTaskForm} from "./display-taskForm.js";
+import { viewList } from "./display-full-list.js";
 
 // create a function for displaying all lists in library
 function displayLibrary() {
@@ -45,7 +46,11 @@ function displayList(list) {
   // create a button for adding a task and append it to listDiv
   const addTaskBtn = createElem("button", "addTask", "+ Add Task")
   addTaskBtn.addEventListener("click", () => {addTaskForm(list)})
-  listDiv.append(addTaskBtn);
+
+  // create a button for viewing the full list and append it to listDiv
+  const viewListBtn = createElem("button", "viewList", "View List");
+  viewListBtn.addEventListener("click", () => viewList(list));
+  listDiv.append(addTaskBtn, viewListBtn);
   document.querySelector(".lists").appendChild(listDiv); // append listDiv to .lists div
 };
 
