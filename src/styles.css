@@ -79,3 +79,11 @@
 .Urgent {
   border: 1px solid darkmagenta;
 }
+
+dialog {
+  justify-self: center;
+  align-self: center;
+  border: none;
+  height: 95vh;
+  width: 60vw;
+}
