@@ -1,4 +1,4 @@
-import {createElem} from "./create-elements.js"
+import {createButton, createElem} from "./create-elements.js"
 
 // create a function for displaying all of a task's info
 function displayTask(task) {
@@ -6,20 +6,11 @@ function displayTask(task) {
   for (const key in task) { // get each key in the task object
     switch (key) {
       // create a p element for each value and append it to taskDiv
-
       case "taskTitle":
-        const title = createElem("p", "title", task[key])
-        taskDiv.append(title);
-        break;
-      
       case "description":
-        const desc = createElem("p", "description", task[key])
-        taskDiv.append(desc);
-        break;
-
       case "dueDate":
-        const dueDate = createElem("p", "dueDate", task[key]);
-        taskDiv.append(dueDate);
+        const taskInfo = createElem("p", key, task[key]);
+        taskDiv.append(taskInfo);
         break;
       
       case "priority":
