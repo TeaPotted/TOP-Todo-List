@@ -24,6 +24,12 @@ function displayTask(task, list) {
         break;
     };
   }
+
+  // create a button for displaying a form to edit the task, then append button to taskDiv
+  const editBtn = createButton("editTask", "Edit")
+  editBtn.addEventListener("click", () => displayEditTaskDialog(task, list));
+
+  taskDiv.append(editBtn)
   return taskDiv;
 };
 
