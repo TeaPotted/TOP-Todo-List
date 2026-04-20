@@ -110,8 +110,11 @@ function displayEditTaskDialog(task, list) {
       displayLibrary();
     };
   });
+  // add a "cancel" button that closes the edit task dialog when clicked
+  const cancelBtn = createButton("cancelEditBtn", "Cancel");
+  cancelBtn.addEventListener("click", () => document.body.removeChild(dialog));
 
-  dialog.append(form, doneBtn) // append form, doneBtn and cancelBtn to dialog
+  dialog.append(form, cancelBtn, doneBtn) // append form, doneBtn and cancelBtn to dialog
   // append dialog to body and make it visible
   document.body.append(dialog);
   dialog.showModal();
