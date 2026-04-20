@@ -1,7 +1,9 @@
 import {createButton, createElem} from "./create-elements.js"
+import { displayLibrary } from "./display-elements.js";
+import { displayEditTaskDialog } from "./display-taskForm.js";
 
 // create a function for displaying all of a task's info
-function displayTask(task) {
+function displayTask(task, list) {
   const taskDiv = createElem("div", "task", ""); // this will keep all the task's info (title, description, etc.)
   for (const key in task) { // get each key in the task object
     switch (key) {
@@ -26,12 +28,12 @@ function displayTask(task) {
 };
 
 // create a function for displaying all the tasks in a list
-function displayTasks(tasks) {
+function displayTasks(tasks, list) {
   const tasksContainer = createElem("div", "tasksContainer", "") // this div will keep all the tasks
   
   // for each task in the tasks array, call displayTask() on the task and append it to tasksContainer
   for (const task of tasks) {
-    tasksContainer.append(displayTask(task));
+    tasksContainer.append(displayTask(task, list));
   }
   return tasksContainer;
 };
@@ -49,7 +51,7 @@ function viewList(list) {
   closeBtn.addEventListener("click", () => document.body.removeChild(dialog));
 
   // append listTitle, displayTasks() on the list's tasks and closeBtn then append dialog to body
-  dialog.append(listTitle, displayTasks(list.tasks), closeBtn)
+  dialog.append(listTitle, displayTasks(list.tasks, list), closeBtn)
   document.body.appendChild(dialog);
   dialog.showModal(); // open the dialog so it is visible
 };
