@@ -42,6 +42,12 @@ function addTaskForm(list) {
   const taskDueDate = form.querySelector("#taskDueDate");
   const taskPriority = form.querySelector("#taskPriority");
 
+  // initially set the task inputs for now
+  taskTitle.value = "super cool task title";
+  taskDesc.value = "Oonga boonga doonga";
+  taskDueDate.valueAsDate = new Date();
+  taskPriority.value = "Important";
+
   // create a "done" button that will add the task to the list when clicked
   const doneBtn = createButton("doneBtn", "Done");
   doneBtn.addEventListener("click", () => {
