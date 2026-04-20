@@ -105,7 +105,9 @@ function displayEditTaskDialog(task, list) {
       // remove the edit dialog and the view full list dialog from body
       document.body.removeChild(dialog);
       document.body.removeChild(document.querySelector("dialog"));
+      // display the updated list and updated library
       viewList(list);
+      displayLibrary();
     };
   });
 
