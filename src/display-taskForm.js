@@ -1,5 +1,6 @@
 import {createElem, createLabel, createOption, createInputContainer, createButton} from "./create-elements.js";
 import { displayLibrary } from "./display-elements.js";
+import {viewList} from "./display-full-list.js"
 
 
 // create a function that will a return a form for creating a new task
@@ -72,4 +73,46 @@ function addTaskForm(list) {
   dialog.showModal();
 };
 
-export {addTaskForm}
+// create a function that displays a form for edditing a task
+function displayEditTaskDialog(task, list) {
+  // create a dialog that will display the form
+  const dialog = document.createElement("dialog")
+  
+  // get the form and get it's inputs
+  const form = createTaskForm();
+  const taskTitle = form.querySelector("#taskTitle");
+  const taskDesc = form.querySelector("#taskDescription");
+  const taskDueDate = form.querySelector("#taskDueDate");
+  const taskPriority = form.querySelector("#taskPriority");
+
+  // initially set the task's input values to the task's values
+  taskTitle.value = task["taskTitle"];
+  taskDesc.value = task["description"];
+  taskDueDate.value = task["dueDate"];
+  taskPriority.value = task["priority"];
+
+  // create a "done" button then append it to dialog
+  const doneBtn = createButton("doneBtn", "Done");
+  doneBtn.addEventListener("click", () => {
+    // if form is valid
+    if (form.checkValidity()) {
+      // set the task's info with the form's inputs
+      task["taskTitle"] = taskTitle.value;
+      task["description"] = taskDesc.value;
+      task["dueDate"] = taskDueDate.value
+      task["priority"] = taskPriority.value
+
+      // remove the edit dialog and the view full list dialog from body
+      document.body.removeChild(dialog);
+      document.body.removeChild(document.querySelector("dialog"));
+      viewList(list);
+    };
+  });
+
+  dialog.append(form, doneBtn) // append form, doneBtn and cancelBtn to dialog
+  // append dialog to body and make it visible
+  document.body.append(dialog);
+  dialog.showModal();
+};
+
+export {addTaskForm, displayEditTaskDialog}
