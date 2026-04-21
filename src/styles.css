@@ -87,3 +87,7 @@ dialog {
   height: 95vh;
   width: 60vw;
 }
+
+.titleDiv {
+  display: flex;
+}
