@@ -50,14 +50,18 @@ function displayTasks(tasks, list) {
 function viewList(list) {
   // create a dialog element that will display all the list's info
   const dialog = document.createElement("dialog");
+  // create a div for the list title and buttons for editting it
+  const titleDiv = createElem("div", "titleDiv", "");
+
   const listTitle = createElem("h2", "title", list.title)  // create a h2 element for the list's title
+  titleDiv.append(listTitle);
   
   // create a button for exiting out of the dialog by removing the dialog from the body
   const closeBtn = createElem("button", "close", "X");
   closeBtn.addEventListener("click", () => document.body.removeChild(dialog));
 
   // append listTitle, displayTasks() on the list's tasks and closeBtn then append dialog to body
-  dialog.append(listTitle, displayTasks(list.tasks, list), closeBtn)
+  dialog.append(titleDiv, displayTasks(list.tasks, list), closeBtn)
   document.body.appendChild(dialog);
   dialog.showModal(); // open the dialog so it is visible
 };
