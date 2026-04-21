@@ -91,7 +91,10 @@ function viewList(list) {
   const titleDiv = createElem("div", "titleDiv", "");
 
   const listTitle = createElem("h2", "title", list.title)  // create a h2 element for the list's title
-  titleDiv.append(listTitle);
+  // create a button for editting the list's title
+  const editBtn = createButton("editTitle", "Edit Title");
+  editBtn.addEventListener("click", () => editListTitle(list));
+  titleDiv.append(listTitle, editBtn);
   
   // create a button for exiting out of the dialog by removing the dialog from the body
   const closeBtn = createElem("button", "close", "X");
