@@ -1,7 +1,7 @@
 import {createButton, createElem} from "./create-elements.js"
 import { displayLibrary } from "./display-elements.js";
 import { displayEditTaskDialog } from "./display-taskForm.js";
-import { deleteTask } from "./delete-things.js";
+import { deleteList, deleteTask } from "./delete-things.js";
 
 // create a function for displaying all of a task's info
 function displayTask(task, list) {
@@ -104,8 +104,16 @@ function viewList(list) {
   const closeBtn = createElem("button", "close", "X");
   closeBtn.addEventListener("click", () => document.body.removeChild(dialog));
 
+  // create a button for deleting the list
+  const deleteBtn = createButton("deleteList", "Delete List");
+  deleteBtn.addEventListener("click", () => {
+    // delete the list and remove the full list view dialog from body
+    deleteList(list);
+    document.body.removeChild(document.querySelector("dialog"));
+  });
+
   // append listTitle, displayTasks() on the list's tasks and closeBtn then append dialog to body
-  dialog.append(titleDiv, displayTasks(list.tasks, list), closeBtn)
+  dialog.append(titleDiv, displayTasks(list.tasks, list), closeBtn, deleteBtn)
   document.body.appendChild(dialog);
   dialog.showModal(); // open the dialog so it is visible
 };
