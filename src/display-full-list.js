@@ -1,6 +1,7 @@
 import {createButton, createElem} from "./create-elements.js"
 import { displayLibrary } from "./display-elements.js";
 import { displayEditTaskDialog } from "./display-taskForm.js";
+import { deleteTask } from "./delete-things.js";
 
 // create a function for displaying all of a task's info
 function displayTask(task, list) {
@@ -28,8 +29,11 @@ function displayTask(task, list) {
   // create a button for displaying a form to edit the task, then append button to taskDiv
   const editBtn = createButton("editTask", "Edit")
   editBtn.addEventListener("click", () => displayEditTaskDialog(task, list));
+  // create a button for deleting a task
+  const deleteBtn = createButton("deleteTask", "Delete Task");
+  deleteBtn.addEventListener("click", () => deleteTask(list, task));
 
-  taskDiv.append(editBtn)
+  taskDiv.append(editBtn, deleteBtn)
   return taskDiv;
 };
 
