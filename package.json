@@ -25,5 +25,8 @@
     "webpack-cli": "^7.0.2",
     "webpack-dev-server": "^5.2.3"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "date-fns": "^4.1.0"
+  }
 }
