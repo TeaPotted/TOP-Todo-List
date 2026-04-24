@@ -68,19 +68,29 @@ function displayTasks(tasksArray) {
   for (const task of tasksArray) {
     const taskDiv = createElem("div", "task", "");
 
-    // for each key in task, create a p element using the key's name and value
+    // for each key in task
     for (const key in task) {
-      const p = createElem("p", key, task[key]);
-      // if key is "description" or "priority", don't display it
-      if (key === "description" || key === "priority") {
-        p.style.display = "none";
-      }
+      switch (key) {
+        // create a p element for both "taskTitle" and "dueDate" keys
+        case "taskTitle":
+          const taskTitleP = createElem("p", key, task[key]);
+          taskDiv.append(taskTitleP);
+          break;
+        
+        case "dueDate":
+          const dueDateP = createElem("p", key, task[key]);
+          taskDiv.append(dueDateP);
+          break;
 
-      // if key is "priority", set taskDiv's class to the priority value
-      if (key === "priority") taskDiv.classList.add(task[key])
-      
-      taskDiv.append(p)
-    }
+        // add a class of the priority value to taskDiv
+        case "priority":
+          taskDiv.classList.add(task[key]);
+          break;
+
+        default:
+          break;
+      };
+    };
     div.append(taskDiv);
   }
   return div;
