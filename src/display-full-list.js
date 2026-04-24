@@ -2,6 +2,7 @@ import {createButton, createElem} from "./create-elements.js"
 import { displayLibrary } from "./display-elements.js";
 import { displayEditTaskDialog } from "./display-taskForm.js";
 import { deleteList, deleteTask } from "./delete-things.js";
+import { format } from "date-fns";
 
 // create a function for displaying all of a task's info
 function displayTask(task, list) {
@@ -11,9 +12,14 @@ function displayTask(task, list) {
       // create a p element for each value and append it to taskDiv
       case "taskTitle":
       case "description":
-      case "dueDate":
         const taskInfo = createElem("p", key, task[key]);
         taskDiv.append(taskInfo);
+        break;
+      case "dueDate":
+        // create a variable for keeping the formatted date
+        const formattedDate = format(task[key].split("-"), "d MMMM y")
+        const dueDateP = createElem("p", key, formattedDate); // set the textContent to formattedDate
+        taskDiv.append(dueDateP);
         break;
       
       case "priority":
