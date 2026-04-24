@@ -2,6 +2,7 @@ import {library, createElem} from "./create-elements.js";
 import {addTaskForm} from "./display-taskForm.js";
 import { viewList } from "./display-full-list.js";
 import { deleteList } from "./delete-things.js";
+import { format } from "date-fns";
 
 // create a function for displaying all lists in library
 function displayLibrary() {
@@ -78,7 +79,9 @@ function displayTasks(tasksArray) {
           break;
         
         case "dueDate":
-          const dueDateP = createElem("p", key, task[key]);
+          // create a variable for keeping the formatted date
+          const formattedDate = format(task[key].split("-"), "d MMMM y")
+          const dueDateP = createElem("p", key, formattedDate); // set the textContent to formattedDate
           taskDiv.append(dueDateP);
           break;
 
