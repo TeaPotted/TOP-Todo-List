@@ -1,5 +1,6 @@
 // an array to keep all the lists
-let library = [];
+let library = localStorage.getItem("library") ? // set it to the "library" item in localStorage
+  JSON.parse(localStorage.getItem("library")) : []; // if there is no "library" item in localStorage, set it to an empty array
 List("poop");
 
 // create a function that creates a new list object and also pushes it to library
