@@ -1,6 +1,7 @@
 import "./styles.css"
 import {List} from "./create-elements.js";
 import {displayLibrary} from "./display-elements.js"
+import { addListToStorage } from "./edit-storage.js";
 
 
 // get #createList and #listTitle buttons
@@ -11,6 +12,6 @@ displayLibrary(); // display the library
 
 // make createListBtn create a new list using listTitle and then display the updated library
 createListBtn.addEventListener("click", () => {
-  List(listTitle.value);
+  addListToStorage(listTitle.value);
   displayLibrary();
 });
