@@ -4,15 +4,14 @@ let library = localStorage.getItem("library") ? // set it to the "library" item 
 
 // create a function that creates a new list object and also pushes it to library
 function List(title) {
-  // create a method for adding a task object to the tasks array
-  const addTask = (taskTitle, description, dueDate, priority) => {
-    const task = {taskTitle, description, dueDate, priority}
-
-    list.tasks.push(task)
-  };
-
-  const list = {title, tasks: [], id: crypto.randomUUID(), addTask}; // set the list's title and make it have an empty arra to keep the tasks in
+  const list = {title, tasks: [], id: crypto.randomUUID()}; // set the list's title and make it have an empty array to keep the tasks in
   library.push(list)
+};
+
+// create a function for adding a task to the given list
+function addTaskToList(list, taskTitle, description, dueDate, priority) {
+  const task = {taskTitle, description, dueDate, priority};
+  list.tasks.push(task);
 };
 
 // create a function for creating elements and adding their class and textContent
@@ -69,4 +68,4 @@ function createButton(cls, textContent) {
   return btn;
 }
 
-export {library, List, createElem, createLabel, createOption, createInputContainer, createButton}
+export {library, List, createElem, createLabel, createOption, createInputContainer, createButton, addTaskToList}
