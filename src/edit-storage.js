@@ -12,11 +12,16 @@ function stringLibrary() {
   return stringedLibrary
 };
 
-
 // create a function that adds a list to localStorage's 'library' item
 function addListToStorage(listName) {
   List(listName);
   localStorage.setItem("library", stringLibrary());
 };
+// create a function that deletes a list from localStorage 'library' item
+function deleteStorageList(list) {
+  // delete the list and then update "library" item in localStorage
+  deleteList(list);
+  localStorage.setItem("library", JSON.stringify(library, ));
+};
 
-export {addListToStorage}
+export {addListToStorage, deleteStorageList}
