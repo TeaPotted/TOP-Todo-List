@@ -1,7 +1,7 @@
 import {library, createElem} from "./create-elements.js";
 import {addTaskForm} from "./display-taskForm.js";
 import { viewList } from "./display-full-list.js";
-import { deleteList } from "./delete-things.js";
+import { deleteStorageList } from "./edit-storage.js";
 import { format } from "date-fns";
 
 // create a function for displaying all lists in library
@@ -51,7 +51,7 @@ function displayList(list) {
   
   // create a button for deleting the list
   const deleteListBtn = createElem("button", "deleteList", "Delete");
-  deleteListBtn.addEventListener("click", () => deleteList(list))
+  deleteListBtn.addEventListener("click", () => deleteStorageList(list))
 
   // create a button for viewing the full list and append it to listDiv
   const viewListBtn = createElem("button", "viewList", "View List");
