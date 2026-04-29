@@ -1,6 +1,7 @@
 import {createElem, createLabel, createOption, createInputContainer, createButton} from "./create-elements.js";
 import { displayLibrary } from "./display-elements.js";
 import {viewList} from "./display-full-list.js"
+import {addTask} from "./edit-storage.js"
 
 
 // create a function that will a return a form for creating a new task
@@ -54,7 +55,7 @@ function addTaskForm(list) {
   doneBtn.addEventListener("click", () => {
     // if form's inputs are all valid, create a task using form's inputs and add it to lists
     if (form.checkValidity()) {
-      list.addTask(taskTitle.value, taskDesc.value, taskDueDate.value, taskPriority.value);
+      addTask(list, taskTitle.value, taskDesc.value, taskDueDate.value, taskPriority.value);
 
       // remove dialog from body and display the updated library
       document.body.removeChild(dialog);
