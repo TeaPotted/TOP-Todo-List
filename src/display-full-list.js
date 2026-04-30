@@ -1,9 +1,8 @@
 import {createButton, createElem} from "./create-elements.js"
 import { displayLibrary } from "./display-elements.js";
 import { displayEditTaskDialog } from "./display-taskForm.js";
-import { deleteList, deleteTask } from "./delete-things.js";
 import { format } from "date-fns";
-import { deleteStorageList } from "./edit-storage.js";
+import { deleteStorageList, deleteStorageTask } from "./edit-storage.js";
 
 // create a function for displaying all of a task's info
 function displayTask(task, list) {
@@ -38,7 +37,7 @@ function displayTask(task, list) {
   editBtn.addEventListener("click", () => displayEditTaskDialog(task, list));
   // create a button for deleting a task
   const deleteBtn = createButton("deleteTask", "Delete Task");
-  deleteBtn.addEventListener("click", () => deleteTask(list, task));
+  deleteBtn.addEventListener("click", () => deleteStorageTask(list, task));
 
   taskDiv.append(editBtn, deleteBtn)
   return taskDiv;
