@@ -3,6 +3,7 @@ import { displayLibrary } from "./display-elements.js";
 import { displayEditTaskDialog } from "./display-taskForm.js";
 import { deleteList, deleteTask } from "./delete-things.js";
 import { format } from "date-fns";
+import { deleteStorageList } from "./edit-storage.js";
 
 // create a function for displaying all of a task's info
 function displayTask(task, list) {
@@ -114,7 +115,7 @@ function viewList(list) {
   const deleteBtn = createButton("deleteList", "Delete List");
   deleteBtn.addEventListener("click", () => {
     // delete the list and remove the full list view dialog from body
-    deleteList(list);
+    deleteStorageList(list);
     document.body.removeChild(document.querySelector("dialog"));
   });
 
