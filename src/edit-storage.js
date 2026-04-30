@@ -62,8 +62,9 @@ function editListTitle(list) {
     doneBtn.replaceWith(editBtn);
     titleDiv.removeChild(cancelBtn);
     displayLibrary();
+    localStorage.setItem("library", JSON.stringify(library)); // update "library" item in localStorage
   });
   editBtn.replaceWith(doneBtn); // replace editBtn with doneBtn
 };
 
-export {addListToStorage, deleteStorageList, addTask, deleteStorageTask}
+export {addListToStorage, deleteStorageList, addTask, deleteStorageTask, editListTitle}
