@@ -1,4 +1,4 @@
-import {createElem, createLabel, createOption, createInputContainer, createButton} from "./create-elements.js";
+import {library, createElem, createLabel, createOption, createInputContainer, createButton} from "./create-elements.js";
 import { displayLibrary } from "./display-elements.js";
 import {viewList} from "./display-full-list.js"
 import {addTask} from "./edit-storage.js"
@@ -100,8 +100,8 @@ function displayEditTaskDialog(task, list) {
       // set the task's info with the form's inputs
       task["taskTitle"] = taskTitle.value;
       task["description"] = taskDesc.value;
-      task["dueDate"] = taskDueDate.value
-      task["priority"] = taskPriority.value
+      task["dueDate"] = taskDueDate.value;
+      task["priority"] = taskPriority.value;
 
       // remove the edit dialog and the view full list dialog from body
       document.body.removeChild(dialog);
@@ -109,6 +109,7 @@ function displayEditTaskDialog(task, list) {
       // display the updated list and updated library
       viewList(list);
       displayLibrary();
+      localStorage.setItem("library", JSON.stringify(library)); // update "library" item in localStorage
     };
   });
   // add a "cancel" button that closes the edit task dialog when clicked
