@@ -2,7 +2,7 @@ import {createButton, createElem} from "./create-elements.js"
 import { displayLibrary } from "./display-elements.js";
 import { displayEditTaskDialog } from "./display-taskForm.js";
 import { format } from "date-fns";
-import { deleteStorageList, deleteStorageTask } from "./edit-storage.js";
+import { deleteStorageList, deleteStorageTask, editListTitle } from "./edit-storage.js";
 
 // create a function for displaying all of a task's info
 function displayTask(task, list) {
