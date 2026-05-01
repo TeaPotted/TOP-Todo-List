@@ -45,6 +45,8 @@ function displayList(list) {
     };
   };
 
+  const buttonsContainer = createElem("div", "buttonsContainer", ""); // container for keeping all the buttons
+  
   // create a button for adding a task and append it to listDiv
   const addTaskBtn = createElem("button", "addTask", "+ Add Task")
   addTaskBtn.addEventListener("click", () => {addTaskForm(list)})
@@ -56,7 +58,9 @@ function displayList(list) {
   // create a button for viewing the full list and append it to listDiv
   const viewListBtn = createElem("button", "viewList", "View List");
   viewListBtn.addEventListener("click", () => viewList(list));
-  listDiv.append(addTaskBtn, viewListBtn, deleteListBtn);
+  
+  buttonsContainer.append(addTaskBtn, viewListBtn, deleteListBtn); // append all buttons to buttonsContainer
+  listDiv.append(buttonsContainer);
   document.querySelector(".lists").appendChild(listDiv); // append listDiv to .lists div
 };
 
