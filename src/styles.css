@@ -73,25 +73,81 @@
 }
 
 .list {
-  border: 1px solid red;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid grey;
+  border-radius: 10px;
+  background-color: #242424;
+  padding: 10px 15px;
+  padding-bottom: 35px;
+  max-height: 450px;
+  min-height: 90px;
+  height: fit-content;
 }
 
-.tasksContainer {
+.list .tasksContainer {
+  margin-top: 5px;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  overflow: hidden;
+}
+
+.task {
+  border: 8px solid;
+  border-radius: 4px;
+  background-color: #3d3d3d;
+}
+
+.list .taskTitle {
+  text-overflow:ellipsis;
+  overflow: hidden;
+  text-wrap: nowrap;
 }
 
 .Normal {
-  border: 1px solid gray;
+  border: none;
+  padding: 8px;
 }
 
 .Important {
-  border: 1px solid cornflowerblue;
+  border-color: #3d3d3d cornflowerblue #3d3d3d  #3d3d3d;
 }
 
 .Urgent {
-  border: 1px solid darkmagenta;
+  border-color: #3d3d3d red #3d3d3d  #3d3d3d;
+}
+
+.list .buttonsContainer {
+  position: absolute;
+  bottom: 5px;
+  align-self: center;
+  display: flex;
+  gap: 15px;
+}
+
+.buttonsContainer > * {
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  background-color: #141414;
+  color: #eee;
+  cursor: pointer;
+  transition-duration: 0.2s;
+}
+
+.buttonsContainer > *:hover {
+  font-weight: bold;
+  background-color: #3a3939;
+}
+
+button.addTask {
+  color:rgb(15, 173, 20);
+}
+
+button.deleteList {
+  color: red;
 }
 
 dialog {
