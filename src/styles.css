@@ -132,7 +132,7 @@
   gap: 15px;
 }
 
-.buttonsContainer > * {
+.buttonsContainer > *, .buttonsDiv > * {
   padding: 5px;
   border-radius: 5px;
   border: none;
@@ -142,12 +142,12 @@
   transition-duration: 0.2s;
 }
 
-.buttonsContainer > *:hover {
+.buttonsContainer > *:hover, .buttonsDiv > *:hover {
   font-weight: bold;
   background-color: #3a3939;
 }
 
-button.addTask {
+button.addTask, button.doneBtn {
   color:rgb(15, 173, 20);
 }
 
@@ -160,7 +160,74 @@ dialog {
   align-self: center;
   border: none;
   height: 95vh;
-  width: 60vw;
+  max-width: 50vw;
+  width: 50vw;
+  background-color: #242424;
+  color: #eee;
+  border: 1px solid grey;
+  border-radius: 7px;
+  box-shadow: 0px 0px 21px 28px #181818d6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+dialog form {
+  width: 99%;
+  justify-items: center;
+}
+
+dialog .input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 10px;
+  width: 85%;
+}
+
+dialog label {
+  font-size: 1.2em;
+}
+
+dialog input, dialog select {
+  font-size: 1.1em;
+  padding: 5px;
+  background: #242424;
+  outline: none;
+  border: 1px solid grey;
+  border-radius: 10px;
+  color: #eee;
+}
+
+dialog input:focus, dialog select:focus {
+  border: 1px solid orchid;
+  box-shadow: 0px 10px 13px -7px #121212;
+}
+
+/* make autofilled inputs have same bg color and text color */
+dialog input:-webkit-autofill,
+dialog input:-webkit-autofill:hover, 
+dialog input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px #242424 inset;
+  -webkit-text-fill-color: #eee;
+}
+
+/* change the color of the calendar icon in date inputs */
+dialog input[type="date"] {
+  color-scheme: dark;
+}
+
+dialog .buttonsDiv {
+  margin-top: 15px;
+  display: flex;
+  gap: 20px;
+}
+
+.buttonsDiv > button {
+  font-size: 1.2em;
+  padding: 3px 5px;
+  width: 100px;
 }
 
 .titleDiv {
