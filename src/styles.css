@@ -86,6 +86,11 @@
   height: fit-content;
 }
 
+.list .tasksNum {
+  position: absolute;
+  right: 10px;
+}
+
 .list .tasksContainer {
   margin-top: 5px;
   display: flex;
