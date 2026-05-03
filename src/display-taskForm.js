@@ -34,9 +34,12 @@ function createTaskForm() {
 function addTaskForm(list) {
   // create a dialog that will keep the form and buttons
   const dialog = document.createElement("dialog");
-
   // get the form for creating new tasks
   const form = createTaskForm();
+
+  // create a p element for displaying which list you're adding a task to
+  const taskToPara = createElem("p", "addTaskTo", `Add new task to ${list.title}`);
+  dialog.append(taskToPara)
 
   // get form's title, description, dueDate and priority inputs
   const taskTitle = form.querySelector("#taskTitle");
@@ -70,7 +73,6 @@ function addTaskForm(list) {
   cancelBtn.addEventListener("click", () => document.body.removeChild(dialog));
   
   buttonsDiv.append(doneBtn, cancelBtn); // append both doneBtn and cancelBtn to buttonsDiv
-  
   // append form and buttonsContainer to dialog
   dialog.append(form, buttonsDiv);
   // append the dialog and make it visible
