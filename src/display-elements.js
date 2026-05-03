@@ -18,6 +18,7 @@ function displayLibrary() {
 // create a function that creates and displays DOM elements with the given list
 function displayList(list) {
   const listDiv = createElem("div", "list", ""); // create a div for the list
+  let tasksNum; // var for keeping track of amount of tasks list has
   
   // for each key in list
   for (const key in list) {
@@ -33,6 +34,8 @@ function displayList(list) {
       case "tasks":
         const tasks = displayTasks(list[key]);
         listDiv.append(tasks)
+        // set tasksNum to the amount of items in tasks array
+        tasksNum = list[key].length;
         break;
 
       // if key is "id", set listDiv data-id attribute to the key's value
@@ -44,6 +47,12 @@ function displayList(list) {
         break;
     };
   };
+
+  // create a p element for displaying how many tasks a list has
+  const tasksNumParagraph = createElem("p", "tasksNum", `${
+    // set the textContent based on tasksNum amount
+    tasksNum === 1 ? `${tasksNum} task` : `${tasksNum} tasks`
+  }`);
 
   const buttonsContainer = createElem("div", "buttonsContainer", ""); // container for keeping all the buttons
   
@@ -60,7 +69,7 @@ function displayList(list) {
   viewListBtn.addEventListener("click", () => viewList(list));
   
   buttonsContainer.append(addTaskBtn, viewListBtn, deleteListBtn); // append all buttons to buttonsContainer
-  listDiv.append(buttonsContainer);
+  listDiv.append(tasksNumParagraph, buttonsContainer); // append taskNumParagraph and buttonsContainer to listDiv
   document.querySelector(".lists").appendChild(listDiv); // append listDiv to .lists div
 };
 
