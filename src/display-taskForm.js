@@ -50,6 +50,8 @@ function addTaskForm(list) {
   taskDueDate.valueAsDate = new Date();
   taskPriority.value = "Important";
 
+  const buttonsDiv = createElem("div", "buttonsDiv", ""); // create a div to store done button and cancel button
+  
   // create a "done" button that will add the task to the list when clicked
   const doneBtn = createButton("doneBtn", "Done");
   doneBtn.addEventListener("click", () => {
@@ -66,9 +68,11 @@ function addTaskForm(list) {
   // create a "cancel" button that closes the dialog and removes it from body
   const cancelBtn = createButton("cancelTaskBtn", "Cancel");
   cancelBtn.addEventListener("click", () => document.body.removeChild(dialog));
-
-  // append form, doneBtn and cancelBtn to dialog
-  dialog.append(form, doneBtn, cancelBtn);
+  
+  buttonsDiv.append(doneBtn, cancelBtn); // append both doneBtn and cancelBtn to buttonsDiv
+  
+  // append form and buttonsContainer to dialog
+  dialog.append(form, buttonsDiv);
   // append the dialog and make it visible
   document.body.append(dialog);
   dialog.showModal();
