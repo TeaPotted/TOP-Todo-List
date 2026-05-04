@@ -155,7 +155,7 @@ button.deleteList {
   color: red;
 }
 
-.addTaskDialog {
+.addTaskDialog, .editTaskDialog {
   justify-self: center;
   align-self: center;
   border: none;
@@ -173,12 +173,13 @@ button.deleteList {
   justify-content: center;
 }
 
-.addTaskDialog form {
+.addTaskDialog form, .editTaskDialog form {
   width: 99%;
   justify-items: center;
 }
 
-.addTaskDialog .input-container {
+.addTaskDialog .input-container,
+.editTaskDialog .input-container {
   display: flex;
   flex-direction: column;
   gap: 3px;
@@ -186,11 +187,12 @@ button.deleteList {
   width: 85%;
 }
 
-.addTaskDialog label {
+.addTaskDialog label, .editTaskDialog label {
   font-size: 1.2em;
 }
 
-.addTaskDialog input, .addTaskDialog select {
+.addTaskDialog input, .addTaskDialog select,
+.editTaskDialog input, .editTaskDialog select {
   font-size: 1.1em;
   padding: 5px;
   background: #242424;
@@ -200,7 +202,8 @@ button.deleteList {
   color: #eee;
 }
 
-.addTaskDialog input:focus, .addTaskDialog select:focus {
+.addTaskDialog input:focus, .addTaskDialog select:focus,
+.editTaskDialog input:focus, .editTaskDialog select:focus {
   border: 1px solid orchid;
   box-shadow: 0px 10px 13px -7px #121212;
 }
@@ -208,17 +211,21 @@ button.deleteList {
 /* make autofilled inputs have same bg color and text color */
 .addTaskDialog input:-webkit-autofill,
 .addTaskDialog input:-webkit-autofill:hover, 
-.addTaskDialog input:-webkit-autofill:focus {
+.addTaskDialog input:-webkit-autofill:focus,
+.editTaskDialog input:-webkit-autofill,
+.editTaskDialog input:-webkit-autofill:hover, 
+.editTaskDialog input:-webkit-autofill:focus  {
   -webkit-box-shadow: 0 0 0px 1000px #242424 inset;
   -webkit-text-fill-color: #eee;
 }
 
 /* change the color of the calendar icon in date inputs */
-.addTaskDialog input[type="date"] {
+.addTaskDialog input[type="date"],
+.editTaskDialog input[type="date"] {
   color-scheme: dark;
 }
 
-.addTaskDialog .buttonsDiv {
+.addTaskDialog .buttonsDiv, .editTaskDialog .buttonsDiv {
   margin-top: 15px;
   display: flex;
   gap: 20px;
