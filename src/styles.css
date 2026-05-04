@@ -155,7 +155,7 @@ button.deleteList {
   color: red;
 }
 
-dialog {
+.addTaskDialog {
   justify-self: center;
   align-self: center;
   border: none;
@@ -173,12 +173,12 @@ dialog {
   justify-content: center;
 }
 
-dialog form {
+.addTaskDialog form {
   width: 99%;
   justify-items: center;
 }
 
-dialog .input-container {
+.addTaskDialog .input-container {
   display: flex;
   flex-direction: column;
   gap: 3px;
@@ -186,11 +186,11 @@ dialog .input-container {
   width: 85%;
 }
 
-dialog label {
+.addTaskDialog label {
   font-size: 1.2em;
 }
 
-dialog input, dialog select {
+.addTaskDialog input, .addTaskDialog select {
   font-size: 1.1em;
   padding: 5px;
   background: #242424;
@@ -200,25 +200,25 @@ dialog input, dialog select {
   color: #eee;
 }
 
-dialog input:focus, dialog select:focus {
+.addTaskDialog input:focus, .addTaskDialog select:focus {
   border: 1px solid orchid;
   box-shadow: 0px 10px 13px -7px #121212;
 }
 
 /* make autofilled inputs have same bg color and text color */
-dialog input:-webkit-autofill,
-dialog input:-webkit-autofill:hover, 
-dialog input:-webkit-autofill:focus {
+.addTaskDialog input:-webkit-autofill,
+.addTaskDialog input:-webkit-autofill:hover, 
+.addTaskDialog input:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0px 1000px #242424 inset;
   -webkit-text-fill-color: #eee;
 }
 
 /* change the color of the calendar icon in date inputs */
-dialog input[type="date"] {
+.addTaskDialog input[type="date"] {
   color-scheme: dark;
 }
 
-dialog .buttonsDiv {
+.addTaskDialog .buttonsDiv {
   margin-top: 15px;
   display: flex;
   gap: 20px;
