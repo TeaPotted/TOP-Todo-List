@@ -33,7 +33,7 @@ function createTaskForm() {
 
 function addTaskForm(list) {
   // create a dialog that will keep the form and buttons
-  const dialog = document.createElement("dialog");
+  const dialog = createElem("dialog", "addTaskDialog", "");
   // get the form for creating new tasks
   const form = createTaskForm();
 
