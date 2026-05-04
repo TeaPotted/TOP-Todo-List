@@ -101,6 +101,9 @@ function displayEditTaskDialog(task, list) {
   taskDueDate.value = task["dueDate"];
   taskPriority.value = task["priority"];
 
+  // create a div for keeping done button and cancel button
+  const buttonsDiv = createElem("div", "buttonsDiv", "");
+  
   // create a "done" button then append it to dialog
   const doneBtn = createButton("doneBtn", "Done");
   doneBtn.addEventListener("click", () => {
@@ -125,7 +128,10 @@ function displayEditTaskDialog(task, list) {
   const cancelBtn = createButton("cancelEditBtn", "Cancel");
   cancelBtn.addEventListener("click", () => document.body.removeChild(dialog));
 
-  dialog.append(form, cancelBtn, doneBtn) // append form, doneBtn and cancelBtn to dialog
+  // store doneBtn and cancelBtn in buttonsDiv
+  buttonsDiv.append(doneBtn, cancelBtn)
+
+  dialog.append(form, buttonsDiv) // append form and buttonsDiv to dialog
   // append dialog to body and make it visible
   document.body.append(dialog);
   dialog.showModal();
