@@ -58,7 +58,7 @@ function displayTasks(tasks, list) {
 // of the list this function was called on
 function viewList(list) {
   // create a dialog element that will display all the list's info
-  const dialog = document.createElement("dialog");
+  const dialog = createElem("dialog", "fullListDialog", "");
   // create a div for the list title and buttons for editting it
   const titleDiv = createElem("div", "titleDiv", "");
 
