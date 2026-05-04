@@ -83,7 +83,10 @@ function addTaskForm(list) {
 // create a function that displays a form for edditing a task
 function displayEditTaskDialog(task, list) {
   // create a dialog that will display the form
-  const dialog = document.createElement("dialog")
+  const dialog = createElem("dialog", "editTaskDialog", "");
+  // create a p element to show which task you're editting
+  const whichTaskPara = createElem("p", "whichTaskPara", `Edit ${task.taskTitle}`);
+  dialog.append(whichTaskPara);
   
   // get the form and get it's inputs
   const form = createTaskForm();
