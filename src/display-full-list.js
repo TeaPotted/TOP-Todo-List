@@ -32,6 +32,9 @@ function displayTask(task, list) {
     };
   }
 
+  // create a div to keep edit button and delete button
+  const buttonsContainer = createElem("div", "buttonsContainer", "");
+
   // create a button for displaying a form to edit the task, then append button to taskDiv
   const editBtn = createButton("editTask", "Edit")
   editBtn.addEventListener("click", () => displayEditTaskDialog(task, list));
@@ -39,7 +42,9 @@ function displayTask(task, list) {
   const deleteBtn = createButton("deleteTask", "Delete Task");
   deleteBtn.addEventListener("click", () => deleteStorageTask(list, task));
 
-  taskDiv.append(editBtn, deleteBtn)
+  // store editBtn and deleteBtn in buttonsContainer, then append buttonsContainer to taskDiv
+  buttonsContainer.append(editBtn, deleteBtn);
+  taskDiv.append(buttonsContainer)
   return taskDiv;
 };
 
