@@ -377,7 +377,6 @@ button.deleteList {
 
 .fullListDialog button.deleteList {
   margin-top: auto;
-  margin-bottom: 10px;
   font-size: 18px;
   color: red;
 }
