@@ -91,6 +91,13 @@
   right: 10px;
 }
 
+.list .title {
+  max-width: 70%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-wrap: nowrap;
+}
+
 .list .tasksContainer {
   margin-top: 5px;
   display: flex;
