@@ -112,8 +112,7 @@
 }
 
 .Normal {
-  border: none;
-  padding: 8px;
+  border-color: #3d3d3d;
 }
 
 .Important {
@@ -132,7 +131,9 @@
   gap: 15px;
 }
 
-.buttonsContainer > *, .buttonsDiv > * {
+.buttonsContainer > *, .buttonsDiv > *, 
+.fullListDialog button.deleteList,
+.fullListDialog .titleDiv > button {
   padding: 5px;
   border-radius: 5px;
   border: none;
@@ -142,7 +143,9 @@
   transition-duration: 0.2s;
 }
 
-.buttonsContainer > *:hover, .buttonsDiv > *:hover {
+.buttonsContainer > *:hover, .buttonsDiv > *:hover,
+.fullListDialog button.deleteList:hover,
+.fullListDialog .titleDiv > button:hover {
   font-weight: bold;
   background-color: #3a3939;
 }
@@ -158,7 +161,6 @@ button.deleteList {
 .addTaskDialog, .editTaskDialog {
   justify-self: center;
   align-self: center;
-  border: none;
   height: 95vh;
   max-width: 50vw;
   width: 50vw;
@@ -237,6 +239,138 @@ button.deleteList {
   width: 100px;
 }
 
-.titleDiv {
+.fullListDialog {
+  justify-self: center;
+  align-self: center;
+  max-height: 95vh;
+  height: 95vh;
+  width: 65vw;
+  background-color: #242424;
+  color: #eee;
+  border: 1px solid grey;
+  border-radius: 7px;
+  box-shadow: 0px 0px 21px 28px #181818d6;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  scrollbar-width:thin;
+  scrollbar-color: grey #242424;
+  padding: 10px 0px;
+}
+
+.fullListDialog .titleDiv {
+  display: flex;
+  gap: 20px;
+  margin: 10px 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.fullListDialog h2 {
+  outline: none;
+  max-width: 70%;
+}
+
+.fullListDialog h2[contenteditable="true"] {
+  outline: 1px solid orchid;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.fullListDialog .titleDiv > button {
+  font-size: 15px;
+}
+
+.fullListDialog .editTitle {
+  color: #eee;
+  background-color: transparent;
+  border: 1px solid #eee;
+  padding: 5px 10px;
+  font-size: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: lighter;
+}
+
+.fullListDialog .editTitle:hover {
+  font-weight: bold;
+}
+
+.fullListDialog .tasksContainer {
+  margin-top: 5px;
+  width: 95%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.fullListDialog .task {
+  width: 100%;
+  word-wrap: break-word;
+  position: relative;
+  padding: 2px 8px;
+}
+
+.fullListDialog .taskTitle {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+
+.fullListDialog .description {
+  margin-bottom: 15px;
+}
+
+.fullListDialog .dueDate {
+  position: absolute;
+  bottom: 0px;
+  right: 10px;
+}
+
+.fullListDialog .priority {
+  position: absolute;
+  bottom: 0px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.fullListDialog .task.Important .priority {
+  color: cornflowerblue;
+}
+
+
+.fullListDialog .task.Urgent .priority {
+  color: #ff1f1f;
+}
+
+.fullListDialog .buttonsContainer {
+  justify-self: center;
+  display: flex;
+  gap: 10px;
+}
+
+.fullListDialog .buttonsContainer > * {
+  background-color: transparent;
+  border: 1px solid grey;
+}
+
+.fullListDialog button.close {
+  position: absolute;
+  top: -1px;
+  right: 16px;
+  color: lightgrey;
+  border: none;
+  background-color: transparent;
+  font-size: 40px;
+  font-weight: light;
+  cursor: pointer;
+}
+
+.fullListDialog button.deleteList {
+  margin-top: auto;
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: red;
 }
