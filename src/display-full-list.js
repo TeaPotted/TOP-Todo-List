@@ -74,7 +74,7 @@ function viewList(list) {
   titleDiv.append(listTitle, editBtn);
   
   // create a button for exiting out of the dialog by removing the dialog from the body
-  const closeBtn = createElem("button", "close", "X");
+  const closeBtn = createElem("button", "close", "x");
   closeBtn.addEventListener("click", () => document.body.removeChild(dialog));
 
   // create a button for deleting the list
