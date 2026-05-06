@@ -6,6 +6,11 @@ import { format } from "date-fns";
 
 // create a function for displaying all lists in library
 function displayLibrary() {
+  // if p.noLists-p is true/ exists, remove it from .lists div
+  if (document.querySelector("p.noLists-p")) {
+    document.querySelector(".lists").removeChild(document.querySelector("p.noLists-p")) 
+  }
+  
   // if .lists div already has content, reset it's textContent before calling displayList()
   if (document.querySelector(".lists").textContent !== "") document.querySelector(".lists").textContent = "";
 
