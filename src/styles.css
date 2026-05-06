@@ -24,7 +24,7 @@
   align-items: center;
 }
 
-#newBookForm{
+#newListForm{
   position: fixed;
   top: 30%;
   display: flex;
@@ -32,12 +32,12 @@
   gap: 10px;
 }
 
-#newBookForm h2 {
+#newListForm h2 {
   font-weight: lighter;
   color: white;
 }
 
-#newBookForm .input-container {
+#newListForm .input-container {
   display: flex;
   flex-direction: column;
   margin: 10px 0;
@@ -45,7 +45,7 @@
   font-weight: bold;
 }
 
-#newBookForm button {
+#newListForm button {
   width: 90%;
   align-self: center;
   padding: 5px;
