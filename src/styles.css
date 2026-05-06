@@ -152,6 +152,7 @@
 
 .buttonsContainer > *, .buttonsDiv > *, 
 .fullListDialog button.deleteList,
+.fullListDialog button.addTask,
 .fullListDialog .titleDiv > button {
   padding: 5px;
   border-radius: 5px;
@@ -164,6 +165,7 @@
 
 .buttonsContainer > *:hover, .buttonsDiv > *:hover,
 .fullListDialog button.deleteList:hover,
+.fullListDialog button.addTask:hover,
 .fullListDialog .titleDiv > button:hover {
   font-weight: bold;
   background-color: #3a3939;
@@ -392,8 +394,16 @@ button.deleteList {
   cursor: pointer;
 }
 
-.fullListDialog button.deleteList {
+.fullListDialog > .buttonsContainer {
   margin-top: auto;
+}
+
+.fullListDialog button.addTask {
+  font-size: 18px;
+  color: green;
+}
+
+.fullListDialog button.deleteList {
   font-size: 18px;
   color: red;
 }
