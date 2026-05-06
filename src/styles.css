@@ -408,3 +408,11 @@ button.deleteList {
   font-size: 18px;
   color: red;
 }
+
+.noLists-p {
+  color: grey;
+  align-self: center;
+  justify-self: center;
+  margin-top: 25%;
+  position: sticky
+}
