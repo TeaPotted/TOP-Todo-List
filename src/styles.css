@@ -7,7 +7,7 @@
 
 .container {
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 1fr 4fr;
   background-color: #302f2f;
   color: white;
 }
@@ -18,7 +18,7 @@
 }
 
 .form-section {
-  background-color:darkorchid;
+  background-color:#141414;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,27 +34,39 @@
 
 #newListForm h2 {
   font-weight: lighter;
-  color: white;
+  color: #eee;
+  margin-bottom: 10px;
 }
 
 #newListForm .input-container {
   display: flex;
   flex-direction: column;
   margin: 10px 0;
-  color: white;
+  color: #eee;
   font-weight: bold;
+  gap: 3px;
+}
+
+#newListForm input#listTitle {
+  font-size: 1em;
+  padding: 5px 5px;
 }
 
 #newListForm button {
-  width: 90%;
+  width: 80%;
   align-self: center;
   padding: 5px;
   border-radius: 10px;
   border: none;
-  background-color: gold;
+  background-color: darkorchid;
   color: white;
-  font-weight: bold;
   cursor: pointer;
+  transition-duration: 0.2s;
+}
+
+#newListForm button:hover {
+  background-color: indigo;
+  font-weight: bold;
 }
 
 .viewing-section {
@@ -201,7 +213,8 @@ button.deleteList {
 }
 
 .addTaskDialog input, .addTaskDialog select,
-.editTaskDialog input, .editTaskDialog select {
+.editTaskDialog input, .editTaskDialog select,
+#newListForm input {
   font-size: 1.1em;
   padding: 5px;
   background: #242424;
@@ -212,7 +225,8 @@ button.deleteList {
 }
 
 .addTaskDialog input:focus, .addTaskDialog select:focus,
-.editTaskDialog input:focus, .editTaskDialog select:focus {
+.editTaskDialog input:focus, .editTaskDialog select:focus,
+#newListForm input:focus {
   border: 1px solid orchid;
   box-shadow: 0px 10px 13px -7px #121212;
 }
@@ -223,7 +237,10 @@ button.deleteList {
 .addTaskDialog input:-webkit-autofill:focus,
 .editTaskDialog input:-webkit-autofill,
 .editTaskDialog input:-webkit-autofill:hover, 
-.editTaskDialog input:-webkit-autofill:focus  {
+.editTaskDialog input:-webkit-autofill:focus,
+#newListForm input:-webkit-autofill,
+#newListForm input:-webkit-autofill:hover, 
+#newListForm input:-webkit-autofill:focus  {
   -webkit-box-shadow: 0 0 0px 1000px #242424 inset;
   -webkit-text-fill-color: #eee;
 }
