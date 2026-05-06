@@ -65,6 +65,15 @@ function addTaskForm(list) {
       // remove dialog from body and display the updated library
       document.body.removeChild(dialog);
       displayLibrary();
+
+      // if dialog.fullListDialog is true / exists  (meaning that this function(addTaskForm) was opened in .fullListDialog)
+      if (document.querySelector("dialog.fullListDialog")) {
+        // remove .fullListDialog from body then display the updated full list
+        document.body.removeChild(document.querySelector("dialog.fullListDialog"))
+        viewList(list);
+        // scroll down to the last child of .tasksContainer div in .fullListDialog (to go to the task that was made)
+        document.querySelector("dialog.fullListDialog").querySelector(".tasksContainer").lastChild.scrollIntoView();
+      };
     }
   });
 
