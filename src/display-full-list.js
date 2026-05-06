@@ -1,8 +1,9 @@
 import {createButton, createElem} from "./create-elements.js"
 import { displayLibrary } from "./display-elements.js";
 import { displayEditTaskDialog } from "./display-taskForm.js";
-import { format } from "date-fns";
+import { add, format } from "date-fns";
 import { deleteStorageList, deleteStorageTask, editListTitle } from "./edit-storage.js";
+import {addTaskForm} from "./display-taskForm.js";
 
 // create a function for displaying all of a task's info
 function displayTask(task, list) {
@@ -77,6 +78,13 @@ function viewList(list) {
   const closeBtn = createElem("button", "close", "x");
   closeBtn.addEventListener("click", () => document.body.removeChild(dialog));
 
+  // create a div to keep add task button and delete list button
+  const buttonsContainer = createElem("div", "buttonsContainer", "");
+
+  // create a button for adding a task to list
+  const addTaskBtn = createElem("button", "addTask", "+ Add Task");
+  addTaskBtn.addEventListener("click", () => addTaskForm(list));
+
   // create a button for deleting the list
   const deleteBtn = createButton("deleteList", "Delete List");
   deleteBtn.addEventListener("click", () => {
@@ -84,9 +92,10 @@ function viewList(list) {
     deleteStorageList(list);
     document.body.removeChild(document.querySelector("dialog"));
   });
-
-  // append listTitle, displayTasks() on the list's tasks and closeBtn then append dialog to body
-  dialog.append(titleDiv, displayTasks(list.tasks, list), closeBtn, deleteBtn)
+  
+  buttonsContainer.append(addTaskBtn, deleteBtn); // append addTaskBtn and deleteBtn to buttonsContainer
+  // append listTitle, displayTasks() on the list's tasks and buttonsContainer then append dialog to body
+  dialog.append(titleDiv, displayTasks(list.tasks, list), closeBtn, buttonsContainer)
   document.body.appendChild(dialog);
   dialog.showModal(); // open the dialog so it is visible
 };
