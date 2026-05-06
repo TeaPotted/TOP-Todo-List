@@ -13,6 +13,12 @@ function displayLibrary() {
   for (const list in library) {
     displayList(library[list]);
   }
+  
+  // if the library is empty, display a paragraph saying "No lists. Create a new one!"
+  if (library.length === 0) {
+    const p = createElem("p", "noLists-p", "No Lists. Create a new one!");
+    document.querySelector(".lists").append(p);
+  };
 }
 
 // create a function that creates and displays DOM elements with the given list
