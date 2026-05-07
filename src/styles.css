@@ -413,8 +413,7 @@ button.deleteList {
 
 .noLists-p {
   color: grey;
-  align-self: center;
-  justify-self: center;
-  margin-top: 25%;
-  position: sticky
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
 }
