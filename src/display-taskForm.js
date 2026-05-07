@@ -47,11 +47,7 @@ function addTaskForm(list) {
   const taskDueDate = form.querySelector("#taskDueDate");
   const taskPriority = form.querySelector("#taskPriority");
 
-  // initially set the task inputs for now
-  taskTitle.value = "super cool task title";
-  taskDesc.value = "Oonga boonga doonga";
-  taskDueDate.valueAsDate = new Date();
-  taskPriority.value = "Important";
+  taskDueDate.valueAsDate = new Date(); // initially set taskDueDate to the current date
 
   const buttonsDiv = createElem("div", "buttonsDiv", ""); // create a div to store done button and cancel button
   
