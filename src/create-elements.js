@@ -7,6 +7,7 @@ function List(title) {
   if (title === "") return; // do nothing if title is empty
   const list = {title, tasks: [], id: crypto.randomUUID()}; // set the list's title and make it have an empty array to keep the tasks in
   library.push(list)
+  document.querySelector("#listTitle").value = ""; // reset #listTitle's value
 };
 
 // create a function for adding a task to the given list
