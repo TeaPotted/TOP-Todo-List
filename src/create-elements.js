@@ -4,6 +4,7 @@ let library = localStorage.getItem("library") ? // set it to the "library" item 
 
 // create a function that creates a new list object and also pushes it to library
 function List(title) {
+  if (title === "") return; // do nothing if title is empty
   const list = {title, tasks: [], id: crypto.randomUUID()}; // set the list's title and make it have an empty array to keep the tasks in
   library.push(list)
 };
