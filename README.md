@@ -1,2 +1,2 @@
-# webpack-template
-template for webpack
+# Todo List
+The Odin Project's Todo List project
